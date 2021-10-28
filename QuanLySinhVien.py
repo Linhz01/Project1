@@ -8,31 +8,31 @@ class QuanLySinhVien:
  
  # Hàm tạo sinh viên mới
     def nhapSinhVien(self):
-        svid = input("Nhập mã sinh viên: ")
+        svid = input(" Nhập mã sinh viên: ")
         sv:SinhVien = self.findByID(svid)
         while (True):
             sv:SinhVien = self.findByID(svid)
             if sv != None:
-                svid = input("ID này đã tồn tại, vui lòng nhập lại: ")
+                svid = input(" ID này đã tồn tại, vui lòng nhập lại: ")
             else:
                 break
-        name = input("Nhập tên sinh viên: ")
-        sex = input("Nhập giới tính: ")
+        name = input(" Nhập tên sinh viên: ")
+        sex = input(" Nhập giới tính: ")
         while (sex != "Nam" and sex != "Nữ"):
-            print("Giới tính không hợp lệ vui lòng nhập lại")
-            sex = input("Nhập giới tính: ")
+            print(" Giới tính không hợp lệ vui lòng nhập lại")
+            sex = input(" Nhập giới tính: ")
         else:
-            age = int(input("Nhập tuổi: "))
+            age = int(input(" Nhập tuổi: "))
             while ( age <= 0 ):
-                print("Tuổi không hợp lệ, vui lòng nhập lại")
-                age = int(input("Nhập tuổi: "))
+                print(" Tuổi không hợp lệ, vui lòng nhập lại")
+                age = int(input(" Nhập tuổi: "))
                     
             else:
-                nganh = input("Nhập nghành học: ")
-                diemTB = float(input("Nhập điểm tổng kết: "))
+                nganh = input(" Nhập nghành học: ")
+                diemTB = float(input(" Nhập điểm tổng kết: "))
                 while ( diemTB <= 0 ):
-                    print("Điểm tổng kết không hợp lệ, vui lòng nhập lại!")
-                    diemTB = float(input("Nhập điểm tổng kết: "))
+                    print(" Điểm tổng kết không hợp lệ, vui lòng nhập lại!")
+                    diemTB = float(input(" Nhập điểm tổng kết: "))
                 
                 sv = SinhVien(svid, name, sex, age, nganh, diemTB)
                 self.xepLoaiHocLuc(sv)
@@ -45,25 +45,25 @@ class QuanLySinhVien:
         # Nếu sinh viên tồn tại thì cập nhập thông tin sinh viên
         if (sv != None):
             # nhập thông tin sinh viên
-            name = input("Nhập tên sinh viên: ")
-            sex = input("Nhập giới tính: ")
+            name = input(" Nhập tên sinh viên: ")
+            sex = input(" Nhập giới tính: ")
             while (sex != "Nam" and sex != "Nữ"):
-                print("Giới tính không hợp lệ vui lòng nhập lại")
-                sex = input("Nhập giới tính: ")
-                age = int(input("Nhập tuổi: "))
-                nganh = input("Nhập ngành học: ")
-                diemTB = float(input("Nhập điểm tổng kết: "))
+                print(" Giới tính không hợp lệ vui lòng nhập lại")
+                sex = input(" Nhập giới tính: ")
+                age = int(input(" Nhập tuổi: "))
+                nganh = input(" Nhập ngành học: ")
+                diemTB = float(input(" Nhập điểm tổng kết: "))
             else:
-                age = int(input("Nhập tuổi: "))
+                age = int(input(" Nhập tuổi: "))
                 while (age <= 0):
-                    print("Tuổi không hợp lệ, vui lòng nhập lại")
-                    age = input("Nhập giới tính: ")
+                    print(" Tuổi không hợp lệ, vui lòng nhập lại")
+                    age = input(" Nhập giới tính: ")
                 else:
-                    nganh = input("Nhập nghành học: ")
-                    diemTB = float(input("Nhập điểm tổng kết: "))
+                    nganh = input(" Nhập nghành học: ")
+                    diemTB = float(input(" Nhập điểm tổng kết: "))
                     while ( diemTB <= 0 ):
-                        print("Điểm tổng kết không hợp lệ, vui lòng nhập lại:")
-                        diemTB = float(input("Nhập điểm tổng kết: "))
+                        print(" Điểm tổng kết không hợp lệ, vui lòng nhập lại:")
+                        diemTB = float(input(" Nhập điểm tổng kết: "))
             # cập nhật thông tin sinh viên
             sv._name = name
             sv._sex = sex
@@ -71,11 +71,11 @@ class QuanLySinhVien:
             sv._nganh = nganh
             sv._diemTB = diemTB
             self.xepLoaiHocLuc(sv)
-            print("Sửa thành công!")
+            print(" Sửa thành công!")
 
 
         else:
-            print("Sinh viên có mã: {} không có trong danh sách.".format(id))
+            print(" Sinh viên có mã: {} không có trong danh sách.".format(id))
  
 # Hàm tìm kiếm sinh viên theo mã sv
 # Trả về một sinh viên theo mã sv
