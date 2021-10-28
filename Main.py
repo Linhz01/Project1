@@ -23,16 +23,14 @@ while (True):
     elif (chon == 2):
         if (qlsv.soLuongSinhVien() > 0):
             print("\n 2. Cập nhật thông tin sinh viên. ")
-            print("\n Nhập mã của sinh viên cần sửa: ")
-            id = input()
+            id = input("\n Nhập mã của sinh viên cần sửa: ")
             qlsv.updateSinhVien(id)
         else:
             print("\n Danh sách rỗng!")
     elif (chon == 3):
         if (qlsv.soLuongSinhVien() > 0):
             print("\n 3. Xóa sinh viên.")
-            print("\n Nhập mã sinh viên cần xóa: ")
-            id = input()
+            id = input("\n Nhập mã sinh viên cần xóa: ")
             if (qlsv.deleteById(id)):
                 print("\n Sinh viên có mã: ", id, " đã bị xóa.")
             else:
@@ -42,8 +40,7 @@ while (True):
     elif (chon == 4):
         if (qlsv.soLuongSinhVien() > 0):
             print("\n 4. Tìm kiếm sinh viên.")
-            print("\n Nhập tên sinh viên cần tìm: : ")
-            name = input()
+            name = input("\n Nhập tên sinh viên cần tìm: : ")
             searchResult = qlsv.findByName(name)
             qlsv.showSinhVien(searchResult)
         else:
