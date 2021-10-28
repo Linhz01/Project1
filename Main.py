@@ -4,7 +4,7 @@ from QuanLySinhVien import QuanLySinhVien
 qlsv = QuanLySinhVien()
 while (True):
     print(" ")
-    print(" ............Nhập yêu cầu................")
+    print(" ..............Nhập yêu cầu..............")
     print("|    0. Thoát chương trình               |")
     print("|    1. Nhập thông tin sinh viên         |")
     print("|    2. Cập nhật thông tin sinh viên     |")
@@ -23,27 +23,24 @@ while (True):
     elif (chon == 2):
         if (qlsv.soLuongSinhVien() > 0):
             print("\n 2. Cập nhật thông tin sinh viên. ")
-            print("\n Nhập mã của sinh viên cần sửa: ")
-            id = input()
+            id = input("\n Nhập mã của sinh viên cần sửa: ")
             qlsv.updateSinhVien(id)
         else:
             print("\n Danh sách rỗng!")
     elif (chon == 3):
         if (qlsv.soLuongSinhVien() > 0):
             print("\n 3. Xóa sinh viên.")
-            print("\n Nhập mã sinh viên cần xóa: ")
-            id = input()
+            id = input("\n Nhập mã sinh viên cần xóa: ")
             if (qlsv.deleteById(id)):
                 print("\n Sinh viên có mã: ", id, " đã bị xóa.")
             else:
                 print("\n Không có sinh viên nào có mã:", id)
         else:
-            print("\ nDanh sách rỗng!")
+            print("\n Danh sách rỗng!")
     elif (chon == 4):
         if (qlsv.soLuongSinhVien() > 0):
             print("\n 4. Tìm kiếm sinh viên.")
-            print("\ nNhập tên sinh viên cần tìm: : ")
-            name = input()
+            name = input("\n Nhập tên sinh viên cần tìm: : ")
             searchResult = qlsv.findByName(name)
             qlsv.showSinhVien(searchResult)
         else:
